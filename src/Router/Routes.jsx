@@ -8,6 +8,7 @@ import Venue from "../Pages/Venue";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Mainlayout from "../Layout/Mainlayout";
+import CardDetails from "../Components/CardDetails";
 
 
 
@@ -18,7 +19,8 @@ const createdRoutes= createBrowserRouter([
       element:<Mainlayout></Mainlayout>,
       children:[{
         path:'/',
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader:()=>fetch('/data.json')
       },
       {
         path:'/about',
@@ -35,6 +37,10 @@ const createdRoutes= createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/details/:id',
+        element:<CardDetails></CardDetails>
       }
     ]
     }

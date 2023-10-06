@@ -1,0 +1,51 @@
+[
+    {
+      "id": "1",
+      "service_title": "Dream Wedding Planning",
+      "img": "https://i.ibb.co/FzsGJX2/pexels-min-an-758898.jpg",
+      "price": "$5,000",
+      "reservation_date": "2024-05-20",
+      "details": "Turn your dreams into reality with our comprehensive wedding planning service. We handle everything from venue selection to floral arrangements."
+    },
+    {
+      "id": "2",
+      "service_title": "Rustic Barn Wedding Package",
+      "img": "https://i.ibb.co/fDg4Nrs/pexels-edward-eyer-1045541.jpg",
+      "price": "$3,500",
+      "reservation_date": "2024-06-15",
+      "details": "Experience the charm of a rustic barn wedding with our package. Includes barn rental, country-style decor, and a delectable farm-to-table menu."
+    },
+    {
+      "id": "3",
+      "service_title": "Beach Destination Wedding",
+      "img": "https://i.ibb.co/dQX8TT0/pexels-nathan-cowley-1128782.jpg",
+      "price": "$7,000",
+      "reservation_date": "2024-07-10",
+      "details": "Say 'I do' by the ocean with our beach destination wedding service. We arrange beachfront ceremonies, tropical flower arrangements, and sunset receptions."
+    },
+    {
+      "id": "4",
+      "service_title": "Garden Wedding Coordination",
+      "img": "https://i.ibb.co/bK3f5GY/pexels-pavel-danilyuk-7178868.jpg",
+      "price": "$2,800",
+      "reservation_date": "2024-04-05",
+      "details": "For an intimate affair, choose our garden wedding coordination service. We provide a lush garden venue, elegant garden chairs, and a gourmet garden-themed."
+    },
+    {
+      "id": "5",
+      "service_title": "Luxury Palace Wedding Experience",
+      "img": "https://i.ibb.co/vcm0njT/pexels-i-brahim-hakk-u-man-3342697.jpg",
+      "price": "$10,000",
+      "reservation_date": "2024-08-30",
+      "details": "Live your fairytale with a luxury palace wedding. Our service includes a historic palace venue, opulent decor, and a grand banquet fit for royalty."
+    },
+    {
+      "id": "6",
+      "service_title": "Vintage Elegance Wedding Package",
+      "img": "https://i.ibb.co/5v53JCt/pexels-trung-nguyen-1603884.jpg",
+      "price": "$4,200",
+      "reservation_date": "2024-09-25",
+      "details": "Embrace the elegance of a vintage-themed wedding. We provide vintage decor, antique furnishings, and a vintage-inspired menu for a timeless celebration."
+    }
+  ]
+  
