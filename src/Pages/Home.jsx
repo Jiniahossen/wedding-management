@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import WeddDatacard from "../Components/WeddDatacard";
 import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
+import Works from "../Components/Works";
 
 const Home = () => {
     const wedd = useLoaderData()
@@ -18,6 +19,7 @@ const Home = () => {
                 }
 
             </div>
+            <Works></Works>
 
             <Footer></Footer>
         </div>
