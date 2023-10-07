@@ -1,27 +1,27 @@
-import { useEffect, useState } from "react";
-import {  useLoaderData, useParams } from "react-router-dom";
-import Card from "./Card";
-
+import  { useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
+import Card from "./Card"; // Import your Card component
 
 const CardDetails = () => {
-    const[getdata,SetGetdata]=useState()
-    const {id}=useParams();
-    const datas =useLoaderData();
+  const [card, setCardDetails] = useState(null); 
 
-    useEffect(()=>{
-        const fetchedData=datas.map(data=>data.id===id)
-        SetGetdata(fetchedData);
-        console.log(fetchedData)
+  const { id } = useParams();
+  const cards = useLoaderData();
 
-    },[id,datas])
-   
-    return (
-        <div>
+  useEffect(() => {
+    const getCardDetails = cards.find((card) => card.id === id);
+    setCardDetails(getCardDetails);
+  }, [id, cards]);
 
-            <Card data={getdata}></Card>
-            
-        </div>
-    );
+  return (
+    <div>
+      {card ? (
+        <Card card={card} />
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
 };
 
 export default CardDetails;

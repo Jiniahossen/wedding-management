@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Mainlayout from "../Layout/Mainlayout";
 import CardDetails from "../Components/CardDetails";
+import Errorpage from "../Pages/Errorpage";
 
 
 
@@ -17,6 +18,7 @@ const createdRoutes= createBrowserRouter([
     {
       path:'/',
       element:<Mainlayout></Mainlayout>,
+      errorElement:<Errorpage></Errorpage>,
       children:[{
         path:'/',
         element:<Home></Home>,
