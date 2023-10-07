@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/Authprovider";
 
 
+
 const Login = () => {
     const {logIn}=useContext(AuthContext);
 
@@ -31,6 +32,8 @@ const Login = () => {
         })
         .catch(error=>{
             console.log(error)
+            toast.error('Your email or password is evalid !')
+
         })
 
     }

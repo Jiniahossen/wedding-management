@@ -10,6 +10,7 @@ import Register from "../Pages/Register";
 import Mainlayout from "../Layout/Mainlayout";
 import CardDetails from "../Components/CardDetails";
 import Errorpage from "../Pages/Errorpage";
+import Privaterouter from "../Provider/Privaterouter";
 
 
 
@@ -26,11 +27,11 @@ const createdRoutes= createBrowserRouter([
       },
       {
         path:'/about',
-        element:<About></About>
+        element:<Privaterouter><About></About></Privaterouter>
       },
       {
         path:'/venue',
-        element:<Venue></Venue>
+        element:<Privaterouter><Venue></Venue></Privaterouter>
       },
       {
         path:'/login',
@@ -42,7 +43,7 @@ const createdRoutes= createBrowserRouter([
       },
       {
         path:'/details/:id',
-        element:<CardDetails></CardDetails>,
+        element:<Privaterouter><CardDetails></CardDetails></Privaterouter>,
         loader:()=>fetch('/data.json')
       }
     ]

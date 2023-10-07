@@ -12,13 +12,13 @@ const Works = () => {
             <h1 className=" text-center text-4xl font-serif font-medium mb-10">Some of our work</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-3 h-50">
-                <div className=" image-full bg-opacity-0" data-aos='slide-left'>
+                <div className=" image-full bg-opacity-0" data-aos='zoom-in-up'>
                     <figure><img src="https://i.ibb.co/bK3f5GY/pexels-pavel-danilyuk-7178868.jpg" alt="Shoes" /></figure>
                 </div>
                 <div className=" image-full" data-aos='zoom-in-up'>
                     <figure><img src="https://i.ibb.co/M9yKjN4/beautiful-couple-posing-their-wedding-day.jpg" alt="Shoes" /></figure>
                 </div>
-                <div className=" image-full" data-aos='slide-right'>
+                <div className=" image-full" data-aos='zoom-in-up'>
                     <figure><img src="https://i.ibb.co/3Fhf1yG/full-shot-bride-groom-celebrating.jpg" alt="Shoes" /></figure>
                 </div>
             </div>

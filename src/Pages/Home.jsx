@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import WeddDatacard from "../Components/WeddDatacard";
 import Banner from "../Components/Banner";
-import Footer from "../Components/Footer";
 import Works from "../Components/Works";
 import Shoessection from "../Components/Shoessection";
 

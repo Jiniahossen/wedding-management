@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/Authprovider";
+import userpic from '../assets/user.png';
+import toast from "react-hot-toast";
 const Navbar = () => {
 
     const navLinks = <>
@@ -12,14 +14,17 @@ const Navbar = () => {
     const { user, signout } = useContext(AuthContext);
 
 
+
     const handleSignOutButton = () => {
         signout()
-            .then()
+            .then( 
+                toast.success('Logged out successfully')
+            )
             .catch()
     }
 
     return (
-        <div className=" max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto">
             <div>
                 <div>
                     <div className="navbar bg-base-100">
@@ -32,25 +37,23 @@ const Navbar = () => {
                                     {navLinks}
                                 </ul>
                             </div>
-                            <h2 className="text-xl text-black font-sans font-medium items-center text-center flex-row justify-center mb-4 lg:mb-0">Blossom<span className="text-4xl">.</span><span className="text-2xl font-sans font-semibold text-red-800">Weddings</span></h2>
+                            <h2 className="text-xl text-black font-sans font-medium items-center text-center flex-row justify-center mb-4 lg:mb-0"><span className="text-4xl">.</span><span className="text-2xl font-sans font-semibold text-red-800">Weddings</span></h2>
                         </div>
-                        <div className="navbar-center">
-                            <ul className="">
-
-                                {navLinks}
-
-                            </ul>
+                        <div className="navbar-center hidden ">
+                           
+                           {navLinks}
+                           
                         </div>
                         {
                             user ?
                                 <div className="navbar-end flex gap-2">
                                     <h2>{user.displayName}</h2>
-                                    <img src={user.photoURL} className="w-8 rounded-full" alt="" />
+                                    <img src={user.photoURL} className="w-8 rounded-full" alt='' />
                                     <button className="bg-[#403F3F] text-white text-base font-poppins font-medium px-3 py-1" onClick={handleSignOutButton}>Logout</button>
                                 </div>
                                 :
                                 <div className="navbar-end flex gap-2">
-                                    {/* <img src={userpic} className="w-8" alt="" /> */}
+                                    <img src={userpic} className="w-8" alt="" />
                                     <Link className="bg-[#403F3F] text-white text-base font-poppins font-medium px-3 py-1" to='/login'> <button>Login</button></Link>
                                 </div>
 
