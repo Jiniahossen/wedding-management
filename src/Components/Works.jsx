@@ -1,6 +1,7 @@
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 const Works = () => {
 
     useEffect(() => {
@@ -8,22 +9,24 @@ const Works = () => {
     }, [])
     return (
         <div className=" my-10">
-            <h1 className=" text-center text-2xl font-serif font-medium mb-10">Some of our work</h1>
+            <h1 className=" text-center text-4xl font-serif font-medium mb-10">Some of our work</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-3 h-50">
-                <div className="card image-full" data-aos='slide-left'>
-                    <figure><img src="https://i.ibb.co/X5BVHLR/wedding-couple-best-friends-dressed-fashionable-wedding-attires-are-standing-line-green-yard.jpg" alt="Shoes" /></figure>
+                <div className=" image-full bg-opacity-0" data-aos='slide-left'>
+                    <figure><img src="https://i.ibb.co/bK3f5GY/pexels-pavel-danilyuk-7178868.jpg" alt="Shoes" /></figure>
                 </div>
-                <div className="card image-full" data-aos='zoom-in-up'>
-                    <figure><img src="https://i.ibb.co/Jm6gBpP/couple-altar.jpg" alt="Shoes" /></figure>
+                <div className=" image-full" data-aos='zoom-in-up'>
+                    <figure><img src="https://i.ibb.co/M9yKjN4/beautiful-couple-posing-their-wedding-day.jpg" alt="Shoes" /></figure>
                 </div>
-                <div className="card  image-full" data-aos='slide-right'>
-                    <figure><img src="https://i.ibb.co/Lpm6p5S/happy-newlyweds-hugging-each-other.jpg" alt="Shoes" /></figure>
+                <div className=" image-full" data-aos='slide-right'>
+                    <figure><img src="https://i.ibb.co/3Fhf1yG/full-shot-bride-groom-celebrating.jpg" alt="Shoes" /></figure>
                 </div>
-                
+            </div>
 
-                </div>
-
+            <div className="my-6 text-center flex justify-center">
+                <button className=" rounded-sm text-white bg-[#a83315] text-base font-serif font-medium px-4 py-2">
+                    <Link to={`/about`}>View more about us</Link></button>
+            </div>
         </div>
 
 

@@ -27,7 +27,7 @@ const createdRoutes= createBrowserRouter([
         element:<About></About>
       },
       {
-        path:'/',
+        path:'/venue',
         element:<Venue></Venue>
       },
       {
@@ -40,7 +40,8 @@ const createdRoutes= createBrowserRouter([
       },
       {
         path:'/details/:id',
-        element:<CardDetails></CardDetails>
+        element:<CardDetails></CardDetails>,
+        loader:()=>fetch('/data.json')
       }
     ]
     }

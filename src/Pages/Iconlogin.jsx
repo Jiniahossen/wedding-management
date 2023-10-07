@@ -2,6 +2,7 @@ import { FcGoogle } from 'react-icons/fc';
 import {BsGithub} from 'react-icons/bs'
 import { useContext } from 'react';
 import { AuthContext } from '../Provider/Authprovider';
+import toast from 'react-hot-toast';
 
 const Iconlogin = () => {
     const {googleSignin,githubSignIn} =useContext(AuthContext);
@@ -11,10 +12,12 @@ const Iconlogin = () => {
 
         media()
         .then(res=>{
-            console.log(res.user)
+            console.log(res.user);
+            toast.success('Logged in succesfully')
         })
         .catch(err=>{
             console.log(err)
+            toast.error(err)
         })
     }
     return (

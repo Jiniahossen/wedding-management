@@ -32,7 +32,7 @@ const Navbar = () => {
                                     {navLinks}
                                 </ul>
                             </div>
-                            <h2 className="text-xl text-black font-sans font-medium items-center">Blossom<span className="text-4xl">.</span><span className="text-2xl font-sans font-semibold text-red-800">Weddings</span></h2>
+                            <h2 className="text-xl text-black font-sans font-medium items-center text-center flex-row justify-center mb-4 lg:mb-0">Blossom<span className="text-4xl">.</span><span className="text-2xl font-sans font-semibold text-red-800">Weddings</span></h2>
                         </div>
                         <div className="navbar-center">
                             <ul className="">

@@ -3,7 +3,7 @@
 const Banner = () => {
     return (
         <div>
-            <div className="hero min-h-screen" style={{ backgroundImage: 'url()' }}>
+            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/X5BVHLR/wedding-couple-best-friends-dressed-fashionable-wedding-attires-are-standing-line-green-yard.jpg)' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
