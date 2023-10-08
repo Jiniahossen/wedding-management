@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/Authprovider";
 import userpic from '../assets/user.png';
 import toast from "react-hot-toast";
+import '../index.css'
+
 const Navbar = () => {
 
     const navLinks = <>
@@ -13,14 +15,14 @@ const Navbar = () => {
 
     const { user, signout } = useContext(AuthContext);
 
-
-
     const handleSignOutButton = () => {
         signout()
-            .then( 
+            .then(
                 toast.success('Logged out successfully')
             )
-            .catch()
+            .catch(error=>{
+                toast.error(error)
+            })
     }
 
     return (
@@ -39,10 +41,14 @@ const Navbar = () => {
                             </div>
                             <h2 className="text-xl text-black font-sans font-medium items-center text-center flex-row justify-center mb-4 lg:mb-0"><span className="text-4xl">.</span><span className="text-2xl font-sans font-semibold text-red-800">Weddings</span></h2>
                         </div>
-                        <div className="navbar-center hidden ">
-                           
-                           {navLinks}
-                           
+                        <div id='large-device-menu' className="navbar-center lg:flex ">
+
+                            <ul className="flex gap-6 text-lg font-serif font-medium">
+                                <Link to='/'> <li>Home</li></Link>
+                                <Link to='/Venue'> <li>Venue</li></Link>
+                                <Link to='/about'> <li>About</li></Link>
+                            </ul>
+
                         </div>
                         {
                             user ?
