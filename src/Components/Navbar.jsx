@@ -41,7 +41,7 @@ const Navbar = () => {
                             </div>
                             <h2 className="text-xl text-black font-sans font-medium items-center text-center flex-row justify-center mb-4 lg:mb-0"><span className="text-4xl">.</span><span className="text-2xl font-sans font-semibold text-red-800">Weddings</span></h2>
                         </div>
-                        <div id='large-device-menu' className="navbar-center lg:flex ">
+                        <div id='large-device-menu' className="navbar-center ">
 
                             <ul className="flex gap-6 text-lg font-serif font-medium">
                                 <Link to='/'> <li>Home</li></Link>
@@ -62,7 +62,6 @@ const Navbar = () => {
                                     <img src={userpic} className="w-8" alt="" />
                                     <Link className="bg-[#403F3F] text-white text-base font-poppins font-medium px-3 py-1" to='/login'> <button>Login</button></Link>
                                 </div>
-
                         }
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
 import Iconlogin from "./Iconlogin";
 import { useContext } from "react";
@@ -8,6 +8,7 @@ import { AuthContext } from "../Provider/Authprovider";
 
 const Login = () => {
     const {logIn}=useContext(AuthContext);
+    const navigate=useNavigate()
 
     const handleLogin=(e)=>{
         e.preventDefault();
@@ -29,6 +30,7 @@ const Login = () => {
         .then(result=>{
             console.log(result.user)
             toast.success('Logged in succesfully')
+            navigate('/')
         })
         .catch(error=>{
             console.log(error)

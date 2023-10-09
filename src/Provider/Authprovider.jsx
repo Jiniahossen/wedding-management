@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { GithubAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GithubAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import app from "../Firebase/__firebase.config";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
@@ -61,6 +61,14 @@ const Authprovider = ({children}) => {
        
     }
 
+    // profile update 
+     const handleProfileUpdate=(name,photo)=>{
+        updateProfile(auth.currentUser, {
+            displayName:name, photoURL:photo,
+        })
+     }
+
+
     const authInfo={
         googleSignin,
         githubSignIn,
@@ -68,7 +76,8 @@ const Authprovider = ({children}) => {
         logIn,
         user,
         signout,
-        loading
+        loading,
+        handleProfileUpdate
 
     }
     return (

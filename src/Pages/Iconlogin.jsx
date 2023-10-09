@@ -3,9 +3,12 @@ import {BsGithub} from 'react-icons/bs'
 import { useContext } from 'react';
 import { AuthContext } from '../Provider/Authprovider';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Iconlogin = () => {
     const {googleSignin,githubSignIn} =useContext(AuthContext);
+    const navigate=useNavigate()
+
 
     const handleDirectSignin=(media)=>{
  
@@ -13,7 +16,8 @@ const Iconlogin = () => {
         media()
         .then(res=>{
             console.log(res.user);
-            toast.success('Logged in succesfully')
+            toast.success('Logged in succesfully');
+            navigate('/')
         })
         .catch(err=>{
             console.log(err)

@@ -1,5 +1,5 @@
 import toast from 'react-hot-toast';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Iconlogin from "./Iconlogin";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/Authprovider";
@@ -7,31 +7,40 @@ import { AuthContext } from "../Provider/Authprovider";
 
 const Register = () => {
 
-    const {createUser}=useContext(AuthContext)
+    const {createUser ,handleProfileUpdate}=useContext(AuthContext);
+    const navigate=useNavigate()
 
     const handleRegister=(e)=>{
         e.preventDefault();
         const name=e.target.name.value;
+        const img=e.target.photo.value;
         const email=e.target.email.value;
         const password=e.target.password.value;
 
         console.log(name,email,password);
 
         if(password.length<6){
-            toast.error('Password must have at least 6 characters')
+            toast.error('Password must have at least 6 characters');
+            return;
         }
-        // if(!/[A-Z] ^[@#][A-Za-z0-9]{7,13}$/.test(password)){
-        //     toast.error('Password must contain contain capital letter and special character')
+        // if (!/[A-Z]/.test(password) ||
+        // !/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+        //     toast.error('Password must contain at least one capital letter and one special character');
+        //     return;
         // }
 
-        createUser(email,password)
-        .then(result=>{
-            console.log(result.user)
-            toast.success('Registerd in succesfully')
+        createUser(email, password)
+        .then((userResult) => {
+            console.log(userResult.user);
+            return handleProfileUpdate(name, img);
         })
-        .catch(error=>{
-            console.log(error)
+        .then(() => {
+            toast.success('User created successfully');
+            navigate('/');
         })
+        .catch((error) => {
+            console.log(error);
+        });
 
     }
     return (
@@ -49,6 +58,12 @@ const Register = () => {
                                     <span className="label-text">Your name</span>
                                 </label>
                                 <input type="text" placeholder="Your name" className="input input-bordered" name="name" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input type="text" placeholder="URL" className="input input-bordered" name="photo" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -71,7 +86,6 @@ const Register = () => {
                                 </h2>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
